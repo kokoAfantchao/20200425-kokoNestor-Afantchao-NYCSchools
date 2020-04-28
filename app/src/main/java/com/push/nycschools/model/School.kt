@@ -1,10 +1,12 @@
 package com.push.nycschools.model
 
+import com.google.gson.annotations.SerializedName
+
 data class School(
-    var dbn: String,
-    var school_name: String,
-    var  boro  : String,
-    var  location  :String
+    @SerializedName("dbn") var dbn : String,
+    @SerializedName("school_name")var school_name: String,
+    @SerializedName("boro")var  boro  : String,
+    @SerializedName("location")var  location  :String
 )
 //"dbn": "01M292",
 //"school_name": "HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES",

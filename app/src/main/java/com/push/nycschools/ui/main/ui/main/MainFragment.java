@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -49,6 +50,7 @@ public class MainFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = ViewModelProviders.of(this).get(MainViewModel.class );
+
         // TODO: Use the ViewModel
         mViewModel.getAllSchool().observe( getViewLifecycleOwner(),  new MainLDObsever());
     }
@@ -93,7 +95,7 @@ public class MainFragment extends Fragment {
 
 
         public  void swapData(List<School> schoolsList ){
-            if( schools != null) {
+            if( schoolsList != null) {
                 this.schools = schoolsList ;
                 notifyDataSetChanged();
             }

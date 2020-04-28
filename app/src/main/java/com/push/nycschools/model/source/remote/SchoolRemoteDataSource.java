@@ -51,9 +51,6 @@ public class SchoolRemoteDataSource implements SchoolDataSource {
                     final Response<List<School>> response = listSchool.execute();
                     final List<School> schoolList = response.body();
 
-                    Log.d("REMOTEDATA SOURCE","++++++++++++++++++++++++"
-                            + response.body().isEmpty()
-                    +"+++++++++++++++++++++++++++++++++++");
 
                     appExecutors.getMainThread().execute(new Runnable() {
                         @Override
@@ -97,7 +94,7 @@ public class SchoolRemoteDataSource implements SchoolDataSource {
         }).build();
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(SchoolService.Companion.getAPI_BASE_URL())
-              //  .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 //.client(okHttpClient)
                 .build();
         schoolService = retrofit.create(SchoolService.class);

@@ -1,5 +1,6 @@
 package com.push.nycschools.ui.main.ui.main;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -21,20 +22,20 @@ public class MainViewModel extends ViewModel {
     }
 
 
-    public MutableLiveData<List<School>> getAllSchool() {
+    public LiveData<List<School>> getAllSchool() {
         if (allSchool== null){
             allSchool = new MutableLiveData<List<School>>();
         }
         loadAllSchool();
         return allSchool;
     }
-    
+
 
     private void loadAllSchool(){
       schoolsRepository.getSchools(new SchoolDataSource.LoadSchoolCallBack() {
           @Override
           public void onSchoolsLoaded(@NotNull List<School> Schools) {
-           allSchool.postValue(Schools);
+           allSchool.setValue(Schools);
           }
 
           @Override

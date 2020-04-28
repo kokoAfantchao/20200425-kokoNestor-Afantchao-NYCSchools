@@ -7,11 +7,10 @@ import retrofit2.http.GET
 
 interface SchoolService {
     companion object {
-
         val API_BASE_URL ="https://data.cityofnewyork.us/resource/"
     }
 
-    @GET("/f9bf-2cp4.json")
+    @GET("/s3k6-pzi2.json")
     fun getListSchool() :retrofit2.Call<List<School>>
 }
 

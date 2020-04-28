@@ -51,7 +51,6 @@ public class SchoolsRepository implements SchoolDataSource {
      //TODO  implement a good logic handle data localy and remotely
      @Override
      public void getSchools(@NotNull final  LoadSchoolCallBack callback ) {
-
-
+        remoteDataSource.getSchools(callback);
      }
  }

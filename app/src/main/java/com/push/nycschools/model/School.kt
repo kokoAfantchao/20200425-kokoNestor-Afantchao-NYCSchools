@@ -1,10 +1,10 @@
 package com.push.nycschools.model
 
 data class School(
-    val dbn: String,
-    val school_name: String,
-    val boro  : String,
-    val location  :String
+    var dbn: String,
+    var school_name: String,
+    var  boro  : String,
+    var  location  :String
 )
 //"dbn": "01M292",
 //"school_name": "HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES",
